@@ -1,0 +1,61 @@
+{
+	"name": "ds_bronze_entel_UsoDatos_tb_05",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_dw_entel",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "BRONZE"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "FECHA_INICIO",
+				"type": "varchar"
+			},
+			{
+				"name": "FECHA_FIN",
+				"type": "varchar"
+			},
+			{
+				"name": "NUMERO",
+				"type": "varchar"
+			},
+			{
+				"name": "IMEI",
+				"type": "varchar"
+			},
+			{
+				"name": "RBS_UTILIZADA",
+				"type": "varchar"
+			},
+			{
+				"name": "CELDA",
+				"type": "varchar"
+			},
+			{
+				"name": "LATITUD_LONGITUD_CELDA",
+				"type": "varchar"
+			},
+			{
+				"name": "VOLUMEN_DATOS_SUBIDOS_BYTES",
+				"type": "varchar"
+			},
+			{
+				"name": "VOLUMEN_DATOS_DESCARGADOS_BYTES",
+				"type": "varchar"
+			},
+			{
+				"name": "VOLUMEN_TOTAL_DATOS_BYTES",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "Bronze",
+			"table": "DatosUso"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

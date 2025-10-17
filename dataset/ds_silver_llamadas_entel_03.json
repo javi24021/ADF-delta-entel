@@ -1,0 +1,84 @@
+{
+	"name": "ds_silver_llamadas_entel_03",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_dw_entel",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "SILVER"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "TIPO_SERVICIO",
+				"type": "varchar"
+			},
+			{
+				"name": "TIPO_REGISTRO",
+				"type": "varchar"
+			},
+			{
+				"name": "NUMERO_A",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "IMEI_A",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RBS_UTILIZADA_A",
+				"type": "varchar"
+			},
+			{
+				"name": "CELDA_A",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LATITUD_LONGITUD_A",
+				"type": "varchar"
+			},
+			{
+				"name": "NUMERO_B",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "IMEI_B",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "RBS_UTILIZADA_B",
+				"type": "varchar"
+			},
+			{
+				"name": "CELDA_B",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LATITUD_LONGITUD_B",
+				"type": "varchar"
+			},
+			{
+				"name": "FECHA",
+				"type": "date"
+			},
+			{
+				"name": "DURACION",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "Silver",
+			"table": "LlamadasLimpias"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

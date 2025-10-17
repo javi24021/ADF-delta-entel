@@ -1,0 +1,81 @@
+{
+	"name": "df_bronze_entel_UsoDatos_06",
+	"properties": {
+		"folder": {
+			"name": "BRONZE"
+		},
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_bronze_entel_UsoDatos_06_CSV",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_bronze_entel_UsoDatos_tb_06",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          {0} as string,",
+				"          {1} as string,",
+				"          {2} as string,",
+				"          {3} as string,",
+				"          {4} as string,",
+				"          {5} as string,",
+				"          {6} as string,",
+				"          {7} as string,",
+				"          {8} as string,",
+				"          {9} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          FECHA_INICIO as string,",
+				"          FECHA_FIN as string,",
+				"          NUMERO as string,",
+				"          IMEI as string,",
+				"          RBS_UTILIZADA as string,",
+				"          CELDA as string,",
+				"          LATITUD_LONGITUD_CELDA as string,",
+				"          VOLUMEN_DATOS_SUBIDOS_BYTES as string,",
+				"          VOLUMEN_DATOS_DESCARGADOS_BYTES as string,",
+				"          VOLUMEN_TOTAL_DATOS_BYTES as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          FECHA_INICIO = {0},",
+				"          FECHA_FIN = {1},",
+				"          NUMERO = {2},",
+				"          IMEI = {3},",
+				"          RBS_UTILIZADA = {4},",
+				"          CELDA = {5},",
+				"          LATITUD_LONGITUD_CELDA = {6},",
+				"          VOLUMEN_DATOS_SUBIDOS_BYTES = {7},",
+				"          VOLUMEN_DATOS_DESCARGADOS_BYTES = {8},",
+				"          VOLUMEN_TOTAL_DATOS_BYTES = {9}",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}
